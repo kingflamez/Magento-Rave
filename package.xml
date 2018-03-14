@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Flutterwave_Rave</name>
+    <version>1.0.0.0</version>
+    <stability>stable</stability>
+    <license uri="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/LICENSE">MIT</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Accept payment worldwide in 156 currencies with Rave by Flutterwave.</summary>
+    <description>Accept payment worldwide in 156 currencies with Rave by Flutterwave.</description>
+    <notes>First Release</notes>
+    <authors><author><name>Oluwole Adebiyi</name><user>kingFlamez</user><email>flamekeed@gmail.com</email></author></authors>
+    <date>2018-03-14</date>
+    <time>23:25:29</time>
+    <contents><target name="magecommunity"><dir name="Flutterwave"><dir name="Rave"><dir name="Block"><dir name="Form"><file name="Rave.php" hash="ca1a65aa6917c50183421fd295f82004"/></dir><dir name="Info"><file name="Rave.php" hash="0ff763bacebc6b85acd85f331a7d116e"/></dir></dir><dir name="Helper"><file name="Data.php" hash="f891bf4bcbafcd84b1698d5614cbad79"/></dir><dir name="Model"><file name="Paymentmethod.php" hash="a3ff8c43fa7a8055aa4d2be411bb01af"/><dir name="System"><file name="Ravecountry.php" hash="b6f79ecd81b2596366f3d15a3c7ecbcf"/><file name="Ravepaymentmethod.php" hash="cf4db21c7c8b1b0dd832ab5951b0a28b"/></dir></dir><dir name="controllers"><file name="PaymentController.php" hash="837a733baf1ee222047fbd3411876cb8"/></dir><dir name="etc"><file name="config.xml" hash="b612a6bd3612316008dbdfa6a1ec65f0"/><file name="system.xml" hash="43f80b34b8d335d189f1848a5680b648"/></dir><dir name="sql"><dir name="flutterwave_rave_setup"><file name="install-1.0.0.0.php" hash="dc293137d24221ca943609bff5a08ac3"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="rave"><dir name="form"><file name="flutterwave_rave.phtml" hash="8f7e54128a1d2d09e23080ad764ddb36"/></dir><file name="inline.phtml" hash="5ddfd693d5609586a42289868676f6a7"/><file name=".DS_Store" hash="5e322029e8011fd446dc327a2e4cfc5b"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Flutterwave_Rave.xml" hash="935b9ba6fc3704975fb8aaf6ac759cae"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="rave"><dir name="images"><file name="rave.png" hash="a38351d4b6249d5ba7cca9ed1a4801a0"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.19</min><max>7.2.0</max></php></required></dependencies>
+</package>

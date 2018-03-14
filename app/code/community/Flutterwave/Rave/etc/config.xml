@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Flutterwave Rave Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   Flutterwave
+ * @author     Oluwole Adebiyi (@kingflamez)
+ * @package    Flutterwave_Rave
+ * @copyright  Copyright (c) 2018 Oluwole Adebiyi. (https://github.com/kingflamez)
+ * @license    https://raw.githubusercontent.com/kingflamez/rave-magento/master/LICENSE   MIT License (MIT)
+ */
+-->
+<config>
+  <modules>
+    <flutterwave_rave>
+      <version>1.0.0.0</version>
+    </flutterwave_rave>
+  </modules>
+
+  <global>
+
+    <helpers>
+      <flutterwave_rave>
+        <class>Flutterwave_Rave_Helper</class>
+      </flutterwave_rave>
+    </helpers>
+
+    <blocks>
+      <flutterwave_rave>
+        <class>Flutterwave_Rave_Block</class>
+      </flutterwave_rave>
+    </blocks>
+
+    <models>
+      <flutterwave_rave>
+        <class>Flutterwave_Rave_Model</class>
+      </flutterwave_rave>
+    </models>
+
+    <resources>
+      <flutterwave_rave_setup>
+        <setup>
+          <module>Flutterwave_Rave</module>
+        </setup>
+      </flutterwave_rave_setup>
+    </resources>
+  </global>
+
+  <default>
+    <payment>
+      <flutterwave_rave>
+        <active>1</active>
+        <model>flutterwave_rave/paymentmethod</model>
+        <order_status>pending</order_status>
+        <title>Rave by Flutterwave (Account, Card, USSD)</title>
+        <allowspecific>0</allowspecific>
+        <test_mode>1</test_mode>
+        <secret_key>FLWSECK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</secret_key>
+        <public_key>FLWPUBK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</public_key>
+        <logo>https://pbs.twimg.com/profile_images/915859962554929153/jnVxGxVj_400x400.jpg</logo>
+        <button_text>Pay Now</button_text>
+        <country>NG</country>
+        <payment_method>both</payment_method>
+        <payment_action>sale</payment_action>
+      </flutterwave_rave>
+    </payment>
+  </default>
+
+  <frontend>
+    <routers>
+      <rave>
+        <use>standard</use>
+        <args>
+          <module>Flutterwave_Rave</module>
+          <frontName>rave</frontName>
+        </args>
+      </rave>
+    </routers>
+  </frontend>
+</config>

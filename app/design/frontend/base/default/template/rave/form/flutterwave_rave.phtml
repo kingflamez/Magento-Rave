@@ -1,0 +1,21 @@
+<?php
+/**
+ * Flutterwave Rave Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   Flutterwave
+ * @author     Oluwole Adebiyi (@kingflamez)
+ * @package    Flutterwave_Rave
+ * @copyright  Copyright (c) 2018 Oluwole Adebiyi. (https://github.com/kingflamez)
+ * @license    https://raw.githubusercontent.com/kingflamez/rave-magento/master/LICENSE   MIT License (MIT)
+ */
+
+?><div class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display:none;">
+    <?php echo $this->__('You will be prompted for card details when you place an order.') ?><br/>
+    <img height="90px" src="<?php echo $this->getSkinUrl('rave/images/rave.png');?>"/>
+</div>
+<div>
+    <?php echo $this->getMethod()->getConfigData('message');?>
+</div>

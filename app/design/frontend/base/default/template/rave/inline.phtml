@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * Flutterwave Rave Extension
+ *
+ * DISCLAIMER
+ * This file will not be supported if it is modified.
+ *
+ * @category   Flutterwave
+ * @author     Oluwole Adebiyi (@kingflamez)
+ * @package    Flutterwave_Rave
+ * @copyright  Copyright (c) 2018 Oluwole Adebiyi. (https://github.com/kingflamez)
+ * @license    https://raw.githubusercontent.com/kingflamez/rave-magento/master/LICENSE   MIT License (MIT)
+ */
+
+$stagingUrl = 'https://rave-api-v2.herokuapp.com';
+$liveUrl = 'https://api.ravepay.co';
+$params = Mage::helper('flutterwave_rave')->getFormParams();
+
+
+// only show popup if parameters were found
+if ($params) :
+
+    ksort($params);
+$stringToHash = "";
+foreach ($params as $key => $val) {
+    $stringToHash .= $val;
+}
+$stringToHash .= Mage::helper('flutterwave_rave')->getSecretKey();
+$hashedValue = hash('sha256', $stringToHash);
+$env = "staging";
+
+if (Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_TEST_MODE)) {
+    $baseUrl = $stagingUrl;
+} else {
+    $baseUrl = $liveUrl;
+}
+$transactionData = array_merge($params, array('integrity_hash' => $hashedValue));
+$json = json_encode($transactionData);
+$datas = "";
+foreach ($transactionData as $key => $value) {
+    $datas .= $key . ": '" . $value . "',";
+}
+$htmlOutput = "
+        <script type='text/javascript' src='" . $baseUrl . "/flwv3-pug/getpaidx/api/flwpbf-inline.js'></script>
+        <script>
+        function popRave() {
+        var data = JSON.parse('" . json_encode($transactionData = array_merge($params, array('integrity_hash' => $hashedValue))) . "');
+        getpaidSetup({" .
+    $datas
+    . "
+        onclose: function() {
+          window.location = '" . Mage::getUrl('rave/payment/cancel') . "'
+        },
+          callback: function(response) {
+            var flw_ref = response.tx.flwRef; // collect flwRef returned and pass to a                  server page to complete status check.
+            console.log('This is the response returned after a charge', response);
+            if (
+              response.tx.chargeResponseCode == '00' ||
+              response.tx.chargeResponseCode == '0'
+            ) {
+              window.location = '" . Mage::getUrl('rave/payment/response', array('_query' => array('txref' => $params['txref'], 'orderid' => Mage::helper('flutterwave_rave')->getOrderID()))) . "';
+            } else {
+                window . location = '" . Mage::getUrl('rave/payment/response', array('_query' => array('txref' => $params['txref'], 'orderid' => Mage::helper('flutterwave_rave')->getOrderID()))) . "';
+            }
+        }
+        }
+        );
+    }
+
+        window.onload = popRave();
+        </script>";
+
+echo $htmlOutput;
+
+endif;
