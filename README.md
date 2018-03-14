@@ -11,7 +11,7 @@ A magento module that allows you to accept payment on Magento version `> 1.5 < 2
 - Login into your Magento Admin
 - Navigate to **`System > Magento Connect > Magento Connect Manager.`**
 <p align="center">
- <img src="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/resources/img/step1.jpg" height="150"/>
+ <img src="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/resources/img/step1.jpg" height="450"/>
 </p>
 
 - Go to **Direct Package File Download**
@@ -19,7 +19,7 @@ A magento module that allows you to accept payment on Magento version `> 1.5 < 2
 - Click Upload. Magento will attempt to install the plugin.
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/resources/img/step2.jpg"/>
+ <img src="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/resources/img/step2.jpg"  height="350"/>
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@ A magento module that allows you to accept payment on Magento version `> 1.5 < 2
 - In Magento Admin panel, navigate to the `System > Configuration` section and select Payment Methods from the `Sales section` of the left‐hand Configuration menu.
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/resources/img/step4.jpg"/>
+ <img src="https://raw.githubusercontent.com/kingflamez/Magento-Rave/master/resources/img/step4.jpg"  height="200"/>
 </p>
 
 - Find Rave Module and click the title to expand if not already expanded.
