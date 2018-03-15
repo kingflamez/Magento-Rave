@@ -1,6 +1,6 @@
-# Flutterwave Rave
+# Flutterwave Rave Magento 1x
 
-A magento module that allows you to accept payment on Magento version `> 1.5 < 2.0`
+A magento module that allows you to accept payment on Magento 1x
 
 ## Requirements
 - Existing Magento installation on your web server.
