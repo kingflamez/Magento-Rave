@@ -89,12 +89,13 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
         $body = substr($response, $header_size);
         curl_close($ch);
         $resp = json_decode($response, false);
+
         if ($resp && $resp->status === "success") {
             if ($resp && $resp->data && $resp->data->status === "successful") {
                 $transactionStatus = $resp->data;
             } elseif ($resp && $resp->data && $resp->data->status === "failed") {
                 // rave has an error message for us
-                $transactionStatus->error = "Flutterwave said: " . $resp->data->chargemessage;
+                $transactionStatus->error = "Error: " . $resp->data->chargemessage;
             } else {
                 // I will requery again here. Just incase we have some devs that cannot setup a queue for requery. I don't like this.
                 if ($requeryCount > 4) {

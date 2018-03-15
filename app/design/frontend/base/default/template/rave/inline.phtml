@@ -50,7 +50,7 @@ $htmlOutput = "
     $datas
     . "
         onclose: function() {
-          window.location = '" . Mage::getUrl('rave/payment/cancel') . "'
+          window.location = '" . Mage::getUrl('rave/payment/response', array('_query' => array('txref' => $params['txref'], 'cancel' => 'true' ,'orderid' => Mage::helper('flutterwave_rave')->getOrderID()))) . "'
         },
           callback: function(response) {
             var flw_ref = response.tx.flwRef; // collect flwRef returned and pass to a                  server page to complete status check.

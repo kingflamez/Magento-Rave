@@ -101,11 +101,14 @@ class Flutterwave_Rave_PaymentController extends Mage_Core_Controller_Front_Acti
 
 
         // verify transaction with rave
-        $transactionStatus = Mage::helper('flutterwave_rave')->verifyTransaction($reference);
-        
+        $transactionStatus = Mage::helper('flutterwave_rave')->verifyTransaction($reference);        
         
         if(!empty($transactionStatus->error))
         {
+            if (!empty($_GET['cancel'])) {
+                return $this->cancelAction();
+            }
+
             Mage::getModel('adminnotification/inbox')->addMajor(
                 Mage::helper('flutterwave_rave')->__("Error while attempting to verify transaction: reference: " . $reference),
                 Mage::helper('flutterwave_rave')->__($transactionStatus->error),
@@ -134,7 +137,7 @@ class Flutterwave_Rave_PaymentController extends Mage_Core_Controller_Front_Acti
 
         if(!$success){
             Mage::getSingleton('core/session')->addError(
-                Mage::helper('flutterwave_rave')->__("There was an error processing your payment. Please try again.".$transactionStatus->order_status));
+                Mage::helper('flutterwave_rave')->__($transactionStatus->error));
             Mage_Core_Controller_Varien_Action::_redirect('checkout/cart');
         }
 
