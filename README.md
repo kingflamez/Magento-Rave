@@ -40,4 +40,4 @@ A magento module that allows you to accept payment on Magento 1x
 You are ready to go 💪🏿 🔥
 
 ## License
-The MIT License (MIT). Please see [License File](LICENCE) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
