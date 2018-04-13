@@ -44,7 +44,9 @@
             </active>
             <test_mode translate="label">
               <label>Staging Mode</label>
-              <comment>Register for a staging account to run tests <![CDATA[<a href="https://raveappv2.herokuapp.com" target="_blank">Staging Account</a>]]></comment>
+              <comment>Register for a staging account to run tests <![CDATA[<a href="https://raveappv2.herokuapp.com" target="_blank">Staging Account</a> <br>
+              <a href="https://rave.flutterwave.com" target="_blank">Live Account</a> 
+              ]]></comment>
               <frontend_type>select</frontend_type>
               <source_model>adminhtml/system_config_source_yesno</source_model>
               <show_in_default>1</show_in_default>
@@ -61,26 +63,44 @@
               <show_in_store>0</show_in_store>
               <sort_order>5</sort_order>
             </order_status>
-            <secret_key translate="label,comment">
-                <label>Secret Key</label>
-                <comment>Check your <![CDATA[<a href="https://rave.flutterwave.com/dashboard/settings/apis" target="_blank">Rave API Keys</a>]]> for yours.</comment>
+            <live_secret_key translate="label,comment">
+                <label>Live Secret Key</label>
+                <comment>Check your <![CDATA[<a href="https://rave.flutterwave.com/dashboard/settings/apis" target="_blank">Live Rave API Keys</a>]]> for yours.</comment>
                 <frontend_type>text</frontend_type>
                 <sort_order>1</sort_order>
                 <show_in_default>1</show_in_default>
                 <show_in_website>1</show_in_website>
                 <show_in_store>1</show_in_store>
                 <sort_order>6</sort_order>
-            </secret_key>
-            <public_key translate="label,comment">
-                <label>Public Key</label>
-                <comment>Check your <![CDATA[<a href="https://rave.flutterwave.com/dashboard/settings/apis" target="_blank">Rave API Keys</a>]]> for yours.</comment>
+            </live_secret_key>
+            <live_public_key translate="label,comment">
+                <label>Live Public Key</label>
+                <comment>Check your <![CDATA[<a href="https://rave.flutterwave.com/dashboard/settings/apis" target="_blank">Live Rave API Keys</a>]]> for yours.</comment>
                 <frontend_type>text</frontend_type>
                 <sort_order>2</sort_order>
                 <show_in_default>1</show_in_default>
                 <show_in_website>1</show_in_website>
                 <show_in_store>1</show_in_store>
                 <sort_order>7</sort_order>
-            </public_key>
+            </live_public_key>
+            <test_secret_key translate="label,comment">
+                <label>Test Secret Key</label>
+                <comment>Check your <![CDATA[<a href="https://raveappv2.herokuapp.com/dashboard/settings/apis" target="_blank">Test Rave API Keys</a>]]> for yours.</comment>
+                <frontend_type>text</frontend_type>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>1</show_in_store>
+                <sort_order>8</sort_order>
+            </test_secret_key>
+            <test_public_key translate="label,comment">
+                <label>Test Public Key</label>
+                <comment>Check your <![CDATA[<a href="https://raveappv2.herokuapp.com/dashboard/settings/apis" target="_blank">Test Rave API Keys</a>]]> for yours.</comment>
+                <frontend_type>text</frontend_type>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>1</show_in_store>
+                <sort_order>9</sort_order>
+            </test_public_key>
             <logo translate="label,comment">
                 <label>Logo</label>
                 <comment>Put a square logo link(Optional).</comment>
@@ -89,7 +109,7 @@
                 <show_in_default>1</show_in_default>
                 <show_in_website>1</show_in_website>
                 <show_in_store>1</show_in_store>
-                <sort_order>8</sort_order>
+                <sort_order>10</sort_order>
             </logo>
             <country translate="label">
               <label>Country</label>
@@ -99,7 +119,7 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>0</show_in_store>
-              <sort_order>9</sort_order>
+              <sort_order>11</sort_order>
             </country>
             <payment_method translate="label">
               <label>Payment payment_method</label>
@@ -109,7 +129,7 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>0</show_in_store>
-              <sort_order>10</sort_order>
+              <sort_order>12</sort_order>
             </payment_method>
             <button_text translate="label,comment">
                 <label>Button Text</label>
@@ -119,7 +139,7 @@
                 <show_in_default>1</show_in_default>
                 <show_in_website>1</show_in_website>
                 <show_in_store>1</show_in_store>
-                <sort_order>11</sort_order>
+                <sort_order>13</sort_order>
             </button_text>
             <allowspecific translate="label">
               <label>Payment from applicable countries</label>
@@ -128,7 +148,7 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-              <sort_order>12</sort_order>
+              <sort_order>14</sort_order>
             </allowspecific>
             <specificcountry translate="label">
               <label>Payment from Specific countries</label>
@@ -137,7 +157,7 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-              <sort_order>13</sort_order>
+              <sort_order>15</sort_order>
             </specificcountry>
           </fields>
         </flutterwave_rave>

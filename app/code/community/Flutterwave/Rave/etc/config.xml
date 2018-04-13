@@ -58,8 +58,10 @@
         <title>Rave by Flutterwave (Account, Card, USSD)</title>
         <allowspecific>0</allowspecific>
         <test_mode>1</test_mode>
-        <secret_key>FLWSECK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</secret_key>
-        <public_key>FLWPUBK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</public_key>
+        <live_secret_key>FLWSECK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</live_secret_key>
+        <live_public_key>FLWPUBK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</live_public_key>
+        <test_secret_key>FLWSECK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</test_secret_key>
+        <test_public_key>FLWPUBK-xxxxxxxxxxxxxxxxxxxxxxxxxx-X</test_public_key>
         <logo>https://pbs.twimg.com/profile_images/915859962554929153/jnVxGxVj_400x400.jpg</logo>
         <button_text>Pay Now</button_text>
         <country>NG</country>

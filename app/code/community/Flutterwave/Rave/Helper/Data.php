@@ -16,8 +16,12 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
 {
     const XML_PATH_TEST_MODE = 'payment/flutterwave_rave/test_mode';
 
-    const XML_PATH_PUBLIC_KEY = 'payment/flutterwave_rave/public_key';
-    const XML_PATH_SECRET_KEY = 'payment/flutterwave_rave/secret_key';
+    const XML_PATH_LIVE_PUBLIC_KEY = 'payment/flutterwave_rave/live_public_key';
+    const XML_PATH_LIVE_SECRET_KEY = 'payment/flutterwave_rave/live_secret_key';
+
+    const XML_PATH_TEST_PUBLIC_KEY = 'payment/flutterwave_rave/test_public_key';
+    const XML_PATH_TEST_SECRET_KEY = 'payment/flutterwave_rave/test_secret_key';
+
     const XML_PATH_LOGO = 'payment/flutterwave_rave/logo';
     const XML_PATH_BUTTON_TEXT = 'payment/flutterwave_rave/button_text';
     const XML_PATH_COUNTRY = 'payment/flutterwave_rave/country';
@@ -26,7 +30,22 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function getSecretKey()
     {
-        return Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_SECRET_KEY);
+        if (Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_TEST_MODE)) {
+            return Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_TEST_SECRET_KEY);
+        } else {
+            return Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_LIVE_SECRET_KEY);
+        }
+
+    }
+
+    public function getPublicKey()
+    {
+        if (Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_TEST_MODE)) {
+            return Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_TEST_PUBLIC_KEY);
+        } else {
+            return Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_LIVE_PUBLIC_KEY);
+        }
+
     }
 
     public function getOrderID()
@@ -62,7 +81,7 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
         $requeryCount++;
         $data = array(
             'txref' => $txref,
-            'SECKEY' => Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_SECRET_KEY),
+            'SECKEY' => $this->getSecretKey(),
             'last_attempt' => '1'
         // 'only_successful' => '1'
         );
@@ -203,7 +222,7 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
 
 
         $postfields = array();
-        $postfields['PBFPubKey'] = Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_PUBLIC_KEY);
+        $postfields['PBFPubKey'] = $this->getPublicKey();
         $postfields['customer_email'] = $email;
         $postfields['customer_firstname'] = $billing->getFirstname();
         $postfields['custom_logo'] = Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_LOGO);
