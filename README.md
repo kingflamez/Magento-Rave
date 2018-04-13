@@ -6,6 +6,7 @@ A magento module that allows you to accept payment on Magento 1x
 - Existing Magento installation on your web server.
 - Go to [Flutterwave Rave Live](https://rave.flutterwave.com) to get your **`LIVE`** public and private key
 - Go to [Flutterwave Rave Test](https://raveappv2.herokuapp.com) to get your **`TEST`** public and private key
+- Download the latest plugin from the  [releases page](https://github.com/kingflamez/Magento-Rave/releases).
 
 ## Install
 - Login into your Magento Admin

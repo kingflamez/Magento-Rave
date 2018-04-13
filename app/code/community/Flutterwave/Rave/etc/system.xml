@@ -44,7 +44,7 @@
             </active>
             <test_mode translate="label">
               <label>Staging Mode</label>
-              <comment>Register for a staging account to run tests <![CDATA[<a href="https://raveappv2.herokuapp.com" target="_blank">Staging Account</a> <br>
+              <comment>Register for a staging account to run tests <![CDATA[ <br> <a href="https://raveappv2.herokuapp.com" target="_blank">Staging Account</a> <br>
               <a href="https://rave.flutterwave.com" target="_blank">Live Account</a> 
               ]]></comment>
               <frontend_type>select</frontend_type>
