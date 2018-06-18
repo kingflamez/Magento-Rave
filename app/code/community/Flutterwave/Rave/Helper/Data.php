@@ -88,7 +88,7 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
 
         
         if (Mage::getStoreConfig(Flutterwave_Rave_Helper_Data::XML_PATH_TEST_MODE)) {
-            $apiLink = "http://flw-pms-dev.eu-west-1.elasticbeanstalk.com/";
+            $apiLink = "https://ravesandboxapi.flutterwave.com/";
         } else {
             $apiLink = "https://api.ravepay.co/";
         }
@@ -139,7 +139,7 @@ class Flutterwave_Rave_Helper_Data extends Mage_Core_Helper_Abstract
 
     function initializeTransaction()
     {
-        $stagingUrl = 'https://rave-api-v2.herokuapp.com';
+        $stagingUrl = 'https://ravesandboxapi.flutterwave.com';
         $liveUrl = 'https://api.ravepay.co';
         $postfields = Mage::helper('flutterwave_rave')->getFormParams();
 
